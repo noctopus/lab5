@@ -10,6 +10,17 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".nameLink").click(clickName);
+}
+
+
+function clickName(e) {
+	// prevent the page from reloading 
+    e.preventDefault();
+    // In an event handler, $(this) refers to 
+    // the object that triggered the event 
+    currText = $(this).text();
+    $(this).text(anagrammedName(currText));
 }
 
 function anagrammedName(name) {
